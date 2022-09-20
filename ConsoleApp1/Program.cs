@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace MyApplication
 {
@@ -35,10 +35,6 @@ namespace MyApplication
                         Subtrahera(tal1, tal2);
                         break;
                     case 3:
-                        if(tal1 == 0|| tal2 == 0)
-                        {
-                            Console.WriteLine("Du försöker dividera med 0");
-                        }
                         Dividera(tal1, tal2);
                         break;
                     case 4:
@@ -63,9 +59,16 @@ namespace MyApplication
         }
 
         static void Dividera(int arg1, int arg2)
-        {
-            int summa = arg1 / arg2;
-            Console.WriteLine(arg1 + " / " + arg2 + " är lika med " + summa);
+        { 
+            try
+            {
+                int summa = arg1 / arg2;
+                Console.WriteLine(arg1 + " / " + arg2 + " är lika med " + summa);
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Det går inte att dela med 0");
+            }
         }
 
         static void Multiplicera(int arg1, int arg2)
