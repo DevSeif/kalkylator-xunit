@@ -1,8 +1,8 @@
-using System;
+﻿using System;
 
 namespace MyApplication
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -46,35 +46,56 @@ namespace MyApplication
             }
         }
 
-        static void Addera(int arg1, int arg2)
+        public static int Addera(int arg1, int arg2)
         {
             int summa = arg1 + arg2;
-            Console.WriteLine(arg1 + " + " + arg2 + " är lika med " + summa);
+            Console.WriteLine($"{arg1} + {arg2} är lika med {summa}");
+            return summa;
         }
 
-        static void Subtrahera(int arg1, int arg2)
+        public static int Addera(int[] arg1, int[] arg2)
+        {
+            int summa = arg1[0] + arg2[0];
+            Console.WriteLine($"{arg1[0]} + {arg2[0]} är lika med {summa}");
+            return summa;
+        }
+
+        public static int Subtrahera(int arg1, int arg2)
         {
             int summa = arg1 - arg2;
-            Console.WriteLine(arg1 + " - " + arg2 + " är lika med " + summa);
+            Console.WriteLine($"{arg1} - {arg2} är lika med {summa}");
+            return summa;
         }
 
-        static void Dividera(int arg1, int arg2)
+        public static int Subtrahera(int[] arg1, int[] arg2)
+        {
+            int summa = arg1[0] - arg2[0];
+            Console.WriteLine($"{arg1[0]} - {arg2[0]} är lika med {summa}");
+            return summa;
+        }
+
+        public static int Dividera(int arg1, int arg2)
         { 
             try
             {
                 int summa = arg1 / arg2;
-                Console.WriteLine(arg1 + " / " + arg2 + " är lika med " + summa);
+                Console.WriteLine($"{arg1} / {arg2} är lika med {summa}");
+                return summa;
             }
             catch (DivideByZeroException)
             {
                 Console.WriteLine("Det går inte att dela med 0");
+                return -1;
             }
+
+
         }
 
-        static void Multiplicera(int arg1, int arg2)
+        public static int Multiplicera(int arg1, int arg2)
         {
             int summa = arg1 * arg2;
-            Console.WriteLine(arg1 + " * " + arg2 + " är lika med " + summa);
+            Console.WriteLine($"{arg1} x {arg2} är lika med {summa}");
+            return summa;
         }
     }
 }
