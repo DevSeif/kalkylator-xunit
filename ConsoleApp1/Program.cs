@@ -74,18 +74,18 @@ namespace MyApplication
             return summa;
         }
 
-        public static int Dividera(int arg1, int arg2)
+        public static decimal? Dividera(int arg1, int arg2)
         { 
             try
             {
-                int summa = arg1 / arg2;
+                decimal summa = arg1 / arg2;
                 Console.WriteLine($"{arg1} / {arg2} är lika med {summa}");
                 return summa;
             }
             catch (DivideByZeroException)
             {
                 Console.WriteLine("Det går inte att dela med 0");
-                return -1;
+                return null;
             }
 
 
