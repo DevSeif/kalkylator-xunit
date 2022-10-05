@@ -50,7 +50,7 @@ namespace TestProject1
         public void Test_Dividera_Exception()
         {
             //var exception = Assert.Throws<DivideByZeroException>(() => Program.Dividera(3, 0));
-            Assert.Equal(-1, Program.Dividera(3, 0));
+            Assert.IsNotType<decimal>(Program.Dividera(3, 0));
         }
 
     }
